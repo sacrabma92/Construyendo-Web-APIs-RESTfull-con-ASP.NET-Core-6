@@ -38,8 +38,15 @@ D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\WebApiAutores.runtimeconfig.json
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\WebApiAutores.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\WebApiAutores.pdb
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\AutoMapper.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Humanizer.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -48,6 +55,8 @@ D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -56,6 +65,8 @@ D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.OpenApi.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -100,9 +111,3 @@ D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\obj\Debug\net6.0\WebApiAutores.pdb
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\obj\Debug\net6.0\WebApiAutores.genruntimeconfig.cache
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\obj\Debug\net6.0\ref\WebApiAutores.dll
-D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\AutoMapper.dll
-D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
-D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
