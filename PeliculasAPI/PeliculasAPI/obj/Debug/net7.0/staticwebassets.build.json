@@ -1,11 +1,88 @@
 {
   "Version": 1,
-  "Hash": "rAE2a66vr5441zM3VEifvr70y8sGVq4BKD05EE0OxZo=",
+  "Hash": "no42JNkl4Q5FNrAkSWCLX3JV6KqbIun8dWtaf7sRllA=",
   "Source": "PeliculasAPI",
   "BasePath": "_content/PeliculasAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "PeliculasAPI\\wwwroot",
+      "Source": "PeliculasAPI",
+      "ContentRoot": "D:\\PROYECTOS\\C#\\Construyendo Web APIs RESTfull con ASP.NET Core 6\\PeliculasAPI\\PeliculasAPI\\wwwroot\\",
+      "BasePath": "_content/PeliculasAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\PROYECTOS\\C#\\Construyendo Web APIs RESTfull con ASP.NET Core 6\\PeliculasAPI\\PeliculasAPI\\wwwroot\\actores\\42a99077-9865-48f2-8aa6-14d635e7ef2d.jpg",
+      "SourceId": "PeliculasAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\PROYECTOS\\C#\\Construyendo Web APIs RESTfull con ASP.NET Core 6\\PeliculasAPI\\PeliculasAPI\\wwwroot\\",
+      "BasePath": "_content/PeliculasAPI",
+      "RelativePath": "actores/42a99077-9865-48f2-8aa6-14d635e7ef2d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\actores\\42a99077-9865-48f2-8aa6-14d635e7ef2d.jpg"
+    },
+    {
+      "Identity": "D:\\PROYECTOS\\C#\\Construyendo Web APIs RESTfull con ASP.NET Core 6\\PeliculasAPI\\PeliculasAPI\\wwwroot\\actores\\aa4cb27d-26c0-475d-9adc-9a803e34a86b.jpg",
+      "SourceId": "PeliculasAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\PROYECTOS\\C#\\Construyendo Web APIs RESTfull con ASP.NET Core 6\\PeliculasAPI\\PeliculasAPI\\wwwroot\\",
+      "BasePath": "_content/PeliculasAPI",
+      "RelativePath": "actores/aa4cb27d-26c0-475d-9adc-9a803e34a86b.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\actores\\aa4cb27d-26c0-475d-9adc-9a803e34a86b.jpg"
+    },
+    {
+      "Identity": "D:\\PROYECTOS\\C#\\Construyendo Web APIs RESTfull con ASP.NET Core 6\\PeliculasAPI\\PeliculasAPI\\wwwroot\\peliculas\\277f8d51-c0f0-419b-a483-3f0368c30a8e.jpeg",
+      "SourceId": "PeliculasAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\PROYECTOS\\C#\\Construyendo Web APIs RESTfull con ASP.NET Core 6\\PeliculasAPI\\PeliculasAPI\\wwwroot\\",
+      "BasePath": "_content/PeliculasAPI",
+      "RelativePath": "peliculas/277f8d51-c0f0-419b-a483-3f0368c30a8e.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\peliculas\\277f8d51-c0f0-419b-a483-3f0368c30a8e.jpeg"
+    },
+    {
+      "Identity": "D:\\PROYECTOS\\C#\\Construyendo Web APIs RESTfull con ASP.NET Core 6\\PeliculasAPI\\PeliculasAPI\\wwwroot\\peliculas\\e033d954-4e0f-46e3-ae11-3a62ebb06680.jpeg",
+      "SourceId": "PeliculasAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\PROYECTOS\\C#\\Construyendo Web APIs RESTfull con ASP.NET Core 6\\PeliculasAPI\\PeliculasAPI\\wwwroot\\",
+      "BasePath": "_content/PeliculasAPI",
+      "RelativePath": "peliculas/e033d954-4e0f-46e3-ae11-3a62ebb06680.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\peliculas\\e033d954-4e0f-46e3-ae11-3a62ebb06680.jpeg"
+    }
+  ]
 }

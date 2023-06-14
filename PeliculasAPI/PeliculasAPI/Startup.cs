@@ -1,4 +1,6 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using PeliculasAPI.Servicios;
 using System.Reflection;
 
 namespace PeliculasAPI
@@ -14,7 +16,17 @@ namespace PeliculasAPI
 
         public void ConfigureSerivces(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
+            services.AddTransient<IAlmacenadorArchivos, AlmacenadorArchivosLocal>();
+            services.AddHttpContextAccessor();
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
+
+            services.AddControllers()
+                .AddNewtonsoftJson();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(c =>
             {
@@ -31,10 +43,11 @@ namespace PeliculasAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPIPeliculas v1"));
             }
 
-            app.UseHttpsRedirection();
-            app.UseRouting();
-            app.UseAuthorization();
-            app.UseEndpoints(endpoints =>
+                app.UseHttpsRedirection();
+                app.UseStaticFiles();
+                app.UseRouting();
+                app.UseAuthorization();
+                app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
