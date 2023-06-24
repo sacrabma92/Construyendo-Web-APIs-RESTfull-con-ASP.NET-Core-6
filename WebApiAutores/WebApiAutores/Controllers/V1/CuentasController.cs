@@ -12,9 +12,9 @@ using WebApiAutores.Servicios;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace WebApiAutores.Controllers
+namespace WebApiAutores.Controllers.V1
 {
-    [Route("api/cuentas")]
+    [Route("api/v1/cuentas")]
     [ApiController]
     public class CuentasController : ControllerBase
     {
@@ -45,7 +45,7 @@ namespace WebApiAutores.Controllers
 
             return Ok(new
             {
-                textoPlano = textoPlano,
+                textoPlano,
                 Hash1 = resultado1,
                 Hash2 = resultado2
             });
@@ -60,9 +60,9 @@ namespace WebApiAutores.Controllers
 
             return Ok(new
             {
-                textoPlano = textoPlano,
-                textoCrifrao = textoCrifrao,
-                textoDesencriptado = textoDesencriptado
+                textoPlano,
+                textoCrifrao,
+                textoDesencriptado
             });
         }
 
@@ -72,27 +72,30 @@ namespace WebApiAutores.Controllers
             var protectorLimitadoPorTiempo = dataProtector.ToTimeLimitedDataProtector();
 
             var textoPlano = "Angelica Gomez";
-            var textoCrifrado = protectorLimitadoPorTiempo.Protect(textoPlano, lifetime:  TimeSpan.FromSeconds(5));
+            var textoCrifrado = protectorLimitadoPorTiempo.Protect(textoPlano, lifetime: TimeSpan.FromSeconds(5));
             Thread.Sleep(6000);
             var textoDesencriptado = protectorLimitadoPorTiempo.Unprotect(textoCrifrado);
 
             return Ok(new
             {
-                textoPlano = textoPlano,
-                textoCrifrado = textoCrifrado,
-                textoDesencriptado = textoDesencriptado
+                textoPlano,
+                textoCrifrado,
+                textoDesencriptado
             });
         }
 
 
-        [HttpPost("registrar")]
+        [HttpPost("registrar", Name = "registrarUsuario")]
         public async Task<ActionResult<RespuestaAutenticacion>> Registrar(CredencialesUsuario credencialesUsuario)
         {
-            var usuario = new IdentityUser { UserName = credencialesUsuario.Email, 
-                Email = credencialesUsuario.Email };
-            var resultado = await userManager.CreateAsync(usuario, credencialesUsuario.Password );
+            var usuario = new IdentityUser
+            {
+                UserName = credencialesUsuario.Email,
+                Email = credencialesUsuario.Email
+            };
+            var resultado = await userManager.CreateAsync(usuario, credencialesUsuario.Password);
 
-            if(resultado.Succeeded)
+            if (resultado.Succeeded)
             {
                 return await ConstruirToken(credencialesUsuario);
             }
@@ -102,15 +105,15 @@ namespace WebApiAutores.Controllers
             }
         }
 
-        [HttpPost("login")]
+        [HttpPost("login", Name = "loginUsuario")]
         public async Task<ActionResult<RespuestaAutenticacion>> Login(CredencialesUsuario credencialesUsuario)
         {
             var resultado = await signInManager.PasswordSignInAsync(credencialesUsuario.Email,
                 credencialesUsuario.Password, isPersistent: false, lockoutOnFailure: false);
 
-            if(resultado.Succeeded)
+            if (resultado.Succeeded)
             {
-                return  await ConstruirToken(credencialesUsuario);
+                return await ConstruirToken(credencialesUsuario);
             }
             else
             {
@@ -119,7 +122,7 @@ namespace WebApiAutores.Controllers
 
         }
 
-        [HttpGet("RenovarToken")]
+        [HttpGet("RenovarToken", Name = "RenovarToken")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<RespuestaAutenticacion>> Renovar()
         {
@@ -159,7 +162,7 @@ namespace WebApiAutores.Controllers
             };
         }
 
-        [HttpPost("HacerAdmin")]
+        [HttpPost("HacerAdmin", Name = "RemoverAdmin")]
         public async Task<ActionResult> HacerAdmin(EditarAdminDTO editarAdminDTO)
         {
             var usuario = await userManager.FindByEmailAsync(editarAdminDTO.Email);

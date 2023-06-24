@@ -111,3 +111,5 @@ D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\obj\Debug\net6.0\WebApiAutores.pdb
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\obj\Debug\net6.0\WebApiAutores.genruntimeconfig.cache
 D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\obj\Debug\net6.0\ref\WebApiAutores.dll
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\bin\Debug\net6.0\WebApiAutores.xml
+D:\PROYECTOS\C#\Construyendo Web APIs RESTfull con ASP.NET Core 6\WebApiAutores\WebApiAutores\obj\Debug\net6.0\WebApiAutores.xml

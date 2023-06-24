@@ -9,10 +9,10 @@ using WebApiAutores.Entidades;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace WebApiAutores.Controllers
+namespace WebApiAutores.Controllers.V1
 {
     [ApiController]
-    [Route("api/libros/{libroId:int}/comentarios")]
+    [Route("api/v1/libros/{libroId:int}/comentarios")]
     public class ComentariosController : ControllerBase
     {
         private readonly ApplicationDbContext context;
@@ -28,7 +28,7 @@ namespace WebApiAutores.Controllers
             this.userManager = userManager;
         }
 
-        [HttpGet]
+        [HttpGet(Name = "ObtenerComentarioLibro")]
         public async Task<ActionResult<List<ComentarioDTO>>> GetComentario(int libroId)
         {
             var existeLibro = await context.Libros.AnyAsync(libroBD => libroBD.Id == libroId);
@@ -44,7 +44,7 @@ namespace WebApiAutores.Controllers
         }
 
         // Guardar los comentario a un libro
-        [HttpPost]
+        [HttpPost(Name = "CrearComentario")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult> PostComentario(int libroId, ComentarioCreacionDTO comentarioCreacionDTO)
         {
@@ -54,7 +54,7 @@ namespace WebApiAutores.Controllers
             var usuarioId = usuario.Id;
             var existeLibro = await context.Libros.AnyAsync(libroDB => libroDB.Id == libroId);
 
-            if(!existeLibro)
+            if (!existeLibro)
             {
                 return NotFound();
             }
@@ -67,19 +67,19 @@ namespace WebApiAutores.Controllers
             return Ok();
         }
 
-        [HttpPut("{id:int}")]
+        [HttpPut("{id:int}", Name = "ActualizarComentario")]
         public async Task<ActionResult> Put(int libroId, int id, ComentarioCreacionDTO comentarioCreacionDTO)
         {
             var existelibro = await context.Libros.AnyAsync(libroBD => libroBD.Id == libroId);
 
-            if(!existelibro)
+            if (!existelibro)
             {
                 return NotFound();
             }
 
             var exitesComentario = await context.Comnetarios.AnyAsync(comentarioDB => comentarioDB.Id == id);
 
-            if(!exitesComentario)
+            if (!exitesComentario)
             {
                 return NotFound();
             }

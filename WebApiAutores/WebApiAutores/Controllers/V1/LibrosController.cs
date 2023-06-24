@@ -7,9 +7,9 @@ using WebApiAutores.DTOs;
 using WebApiAutores.Entidades;
 using WebApiAutores.Migrations;
 
-namespace WebApiAutores.Controllers
+namespace WebApiAutores.Controllers.V1
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class LibrosController : ControllerBase
     {
@@ -22,7 +22,7 @@ namespace WebApiAutores.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id:int}", Name = "ObtenerLibro")]
         public async Task<ActionResult<LibroDTOConAutores>> Get(int id)
         {
             var libro = await context.Libros
@@ -30,7 +30,7 @@ namespace WebApiAutores.Controllers
                 .ThenInclude(autorLibroDB => autorLibroDB.Autor)
                 .FirstOrDefaultAsync(x => x.Id == id);
 
-            if(libro == null)
+            if (libro == null)
             {
                 return NotFound();
             }
@@ -40,10 +40,10 @@ namespace WebApiAutores.Controllers
             return mapper.Map<LibroDTOConAutores>(libro);
         }
 
-        [HttpPost]
+        [HttpPost(Name = "CrearLibro")]
         public async Task<ActionResult> Post(LibroCreacionDto libroCreacionDto)
         {
-            if(libroCreacionDto.AutoresIds == null)
+            if (libroCreacionDto.AutoresIds == null)
             {
                 return BadRequest("No se peude crear un libros sin autores");
             }
@@ -52,7 +52,7 @@ namespace WebApiAutores.Controllers
                 .Where(autorBD => libroCreacionDto.AutoresIds.Contains(autorBD.Id))
                 .Select(autorId => autorId.Id).ToListAsync();
 
-            if(libroCreacionDto.AutoresIds.Count != autoresIds.Count)
+            if (libroCreacionDto.AutoresIds.Count != autoresIds.Count)
             {
                 return BadRequest("No existe uno de los autores enviados");
             }
@@ -65,14 +65,14 @@ namespace WebApiAutores.Controllers
             return Ok();
         }
 
-        [HttpPut("{id:int}")]
+        [HttpPut("{id:int}", Name = "ActualizarLibro")]
         public async Task<ActionResult> Put(int id, LibroCreacionDto libroCreacionDto)
         {
             var libroDB = await context.Libros
                 .Include(x => x.AutoresLibros)
                 .FirstOrDefaultAsync(x => x.Id == id);
 
-            if( libroDB == null ) 
+            if (libroDB == null)
             {
                 return NotFound();
             }
@@ -95,17 +95,17 @@ namespace WebApiAutores.Controllers
             }
         }
 
-        [HttpPatch("{id:int}")]
+        [HttpPatch("{id:int}", Name = "PatchLibro")]
         public async Task<ActionResult> Patch(int id, JsonPatchDocument<LibroPatchDTO> patchDocument)
         {
-            if(patchDocument == null)
+            if (patchDocument == null)
             {
                 return BadRequest();
             }
 
-            var libroDB = await context.Libros.FirstOrDefaultAsync(x => x.Id == id);    
+            var libroDB = await context.Libros.FirstOrDefaultAsync(x => x.Id == id);
 
-            if(libroDB == null)
+            if (libroDB == null)
             {
                 return NotFound();
             }
@@ -116,7 +116,7 @@ namespace WebApiAutores.Controllers
 
             var esValido = TryValidateModel(libroDTO);
 
-            if(!esValido)
+            if (!esValido)
             {
                 return BadRequest(ModelState);
             }
@@ -128,7 +128,7 @@ namespace WebApiAutores.Controllers
         }
 
 
-        [HttpDelete("{id:int}")]
+        [HttpDelete("{id:int}", Name = "BorrarLibro")]
         public async Task<ActionResult> Delete(int id)
         {
             var existe = await context.Libros.AnyAsync(x => x.Id == id);

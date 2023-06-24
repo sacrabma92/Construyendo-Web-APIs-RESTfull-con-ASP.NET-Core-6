@@ -4,11 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.IdentityModel.Tokens.Jwt;
+using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
 using WebApiAutores.Filtros;
 using WebApiAutores.Middlewares;
 using WebApiAutores.Servicios;
+using WebApiAutores.Utilidades;
 
 namespace WebApiAutores
 {
@@ -27,6 +29,7 @@ namespace WebApiAutores
             services.AddControllers(opciones =>
             {
                 opciones.Filters.Add(typeof(FiltroDeExcepcion));
+                opciones.Conventions.Add(new SwaggerAgrupaPorVersion());
             }).AddJsonOptions(x =>
             x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles)
             .AddNewtonsoftJson();
@@ -53,6 +56,23 @@ namespace WebApiAutores
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(c =>
             {
+                c.SwaggerDoc("v1", new OpenApiInfo { 
+                    Title = "WebAPIAutores", 
+                    Version = "v1",
+                    Description = "Este es un web api para trabajar con autores y libros",
+                    Contact = new OpenApiContact
+                    {
+                        Email = "carlos@correo.com",
+                        Name = "Caros Ramirez",
+                        Url = new Uri("https://web.com")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "MIT"
+                    },
+                });
+                c.SwaggerDoc("v2", new OpenApiInfo { Title = "WebAPIAutores", Version = "v2" });
+                //c.OperationFilter<AgregarParametroXVersion>();
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -76,6 +96,10 @@ namespace WebApiAutores
                         new string[]{}
                     }
                 });
+
+                var archivoXML = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var rutaXML = Path.Combine(AppContext.BaseDirectory, archivoXML);
+                c.IncludeXmlComments(rutaXML);
             });
 
             services.AddAutoMapper(typeof(Startup));
@@ -109,8 +133,15 @@ namespace WebApiAutores
             if (env.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(
+                    c =>
+                    {
+                        c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPIAutores v1");
+                        c.SwaggerEndpoint("/swagger/v2/swagger.json", "WebAPIAutores v2");
+                    }
+            );
             }
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
