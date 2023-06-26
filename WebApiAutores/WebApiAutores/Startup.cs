@@ -119,7 +119,8 @@ namespace WebApiAutores
                 {
                     builder.WithOrigins("*")
                     .AllowAnyMethod()
-                    .AllowAnyHeader();
+                    .AllowAnyHeader()
+                    .WithExposedHeaders(new string[] { "cantidadTotalRegistros" });
                 });
             });
             services.AddTransient<HashService>();
